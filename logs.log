@@ -1,0 +1,21 @@
+2024-04-22 11:38:32 INFO  Main:14 - hola
+  2024-04-22 11:48:44 INFO  Main:14 - org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@632ceb35, started on Mon Apr 22 11:48:41 CEST 2024
+  2024-04-22 11:49:21 INFO  Main:14 - org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@632ceb35, started on Mon Apr 22 11:49:18 CEST 2024
+  2024-04-22 11:50:33 INFO  Main:14 - org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@632ceb35, started on Mon Apr 22 11:50:29 CEST 2024
+  2024-04-22 11:54:15 INFO  UserController:29 - [com.example.Entities.User@6eab7f63, com.example.Entities.User@598384d8, com.example.Entities.User@59ed2042]
+  2024-04-22 11:55:23 INFO  UserController:29 - GET
+  2024-04-22 11:55:48 INFO  UserController:29 - GET
+  2024-04-22 11:56:31 INFO  UserController:29 - GET ALL
+  2024-04-22 11:57:22 INFO  UserController:36 - GET BY ID
+  2024-04-22 11:57:28 INFO  UserController:29 - GET ALL
+  2024-04-22 12:02:26 INFO  UserController:29 - GET ALL
+  2024-04-22 12:02:32 ERROR UserService:50 - No se ha encontrado al usuario con el id: 1
+  2024-04-22 12:02:32 INFO  UserController:36 - GET BY ID
+  2024-04-22 12:04:07 INFO  UserController:36 - GET BY ID
+  2024-04-22 12:04:11 INFO  UserController:29 - GET ALL
+  2024-04-22 12:04:20 INFO  UserController:46 - POST USER
+  2024-04-22 12:04:42 ERROR UserService:32 - No se puede borrar, porque no existe ningun usuario con esa id.
+  2024-04-22 12:04:42 INFO  UserController:53 - DELETING USER BY ID
+  2024-04-22 12:05:03 ERROR UserService:39 - No se ha encontrado al usuario con el id: 2
+  2024-04-22 12:05:03 INFO  UserController:60 - UPDATING USER BY ID
+  

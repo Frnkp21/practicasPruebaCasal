@@ -1,8 +1,10 @@
 package com.example.Services;
 
+
 import com.example.Entities.User;
 import com.example.Dao.UserDAO;
 import com.example.Errors.ResourceNotFoundException;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +13,7 @@ import java.util.List;
 
 @Service
 public class UserService {
-
+    private static Logger logger = Logger.getLogger(UserService.class);
     UserDAO userDAO;
     @Autowired
     public UserService(UserDAO userDAO){
@@ -34,6 +36,7 @@ public class UserService {
         User existingUser = userDAO.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al usuario con el id: " + id));
 
+
         existingUser.setEmail(updatedUser.getEmail());
         existingUser.setPassword(updatedUser.getPassword());
         existingUser.setNom(updatedUser.getNom());
@@ -44,6 +47,7 @@ public class UserService {
     }
     public User readUserById(Integer id) {
         return userDAO.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al usuario con el id: " + id));
+
     }
 
 }
