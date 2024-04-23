@@ -33,7 +33,7 @@ public class UserController {
     public ResponseEntity<User> readUserById(@PathVariable Integer id) {
         User user = userService.readUserById(id);
         if (user != null) {
-            logger.info("GET BY ID");
+            logger.info("GET BY ID " + id);
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.notFound().build();
@@ -50,14 +50,14 @@ public class UserController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);
-        logger.info("DELETING USER BY ID");
+        logger.info("DELETING USER BY ID " + id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser) {
         User user = userService.updateUser(id, updatedUser);
-        logger.info("UPDATING USER BY ID");
+        logger.info("UPDATING USER BY ID " + id);
         return ResponseEntity.ok(user);
     }
 }
