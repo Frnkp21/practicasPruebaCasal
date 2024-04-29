@@ -78,4 +78,14 @@
   2024-04-28 17:45:22 ERROR UserController:66 - Error occurred while creating user: not-null property references a null or transient value : com.example.Entities.User.DNI
   2024-04-28 17:45:25 ERROR UserController:66 - Error occurred while creating user: not-null property references a null or transient value : com.example.Entities.User.DNI
   2024-04-28 17:45:48 ERROR UserController:66 - Error occurred while creating user: not-null property references a null or transient value : com.example.Entities.User.contacto1_email
-  
+  2024-04-29 21:16:03 INFO  UserController:34 - GET ALL
+  2024-04-29 21:16:31 INFO  UserController:34 - GET ALL
+  2024-04-29 22:01:42 INFO  UserController:34 - GET ALL
+  2024-04-29 22:04:54 INFO  UserController:34 - GET ALL
+  2024-04-29 22:09:22 INFO  UserController:34 - GET ALL
+  2024-04-29 22:09:36 INFO  UserController:75 - DELETING USER BY ID
+  2024-04-29 22:10:16 INFO  UserController:57 - CREATE USER DONE...
+  2024-04-29 22:10:45 INFO  UserController:82 - UPDATING USER BY ID
+  2024-04-29 22:14:56 INFO  UserController:34 - GET ALL
+2024-04-29 22:15:45 INFO  UserController:34 - GET ALL
+2024-04-29 22:17:17 INFO  UserController:75 - DELETING USER BY ID

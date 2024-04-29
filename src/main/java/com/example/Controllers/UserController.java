@@ -45,6 +45,7 @@ public class UserController {
         if (user != null) {
             return ResponseEntity.ok(user);
         } else {
+            logger.info("GET BY ID");
             return ResponseEntity.notFound().build();
         }
     }
@@ -53,6 +54,7 @@ public class UserController {
     public ResponseEntity<Object> createUser(@RequestBody User user) {
         try {
             User createdUser = userService.createUser(user);
+            logger.info("CREATE USER DONE...");
             return ResponseEntity.ok(createdUser);
         } catch (ConstraintViolationException ex) {
             // Captura la excepción de validación y devuelve un mensaje de error personalizado
@@ -70,12 +72,14 @@ public class UserController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);
+        logger.info("DELETING USER BY ID");
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser) {
         User user = userService.updateUser(id, updatedUser);
+        logger.info("UPDATING USER BY ID");
         return ResponseEntity.ok(user);
     }
 }
