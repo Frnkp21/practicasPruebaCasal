@@ -34,7 +34,7 @@ public class UserController {
             logger.info("GET ALL");
             return ResponseEntity.ok(users);
         } catch (Exception ex) {
-            logger.error("Error occurred while fetching all users: " + ex.getMessage());
+            logger.error("Error para mostrar a todos los usuarios: " + ex.getMessage());
             ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
@@ -57,15 +57,8 @@ public class UserController {
             logger.info("CREATE USER DONE...");
             return ResponseEntity.ok(createdUser);
         } catch (ConstraintViolationException ex) {
-            // Captura la excepción de validación y devuelve un mensaje de error personalizado
-            String errorMessage = "Error al crear usuario: " + ex.getMessage();
-            ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "El formato de los datos proporcionados no es válido.");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
-        } catch (Exception ex) {
-            // Captura cualquier otra excepción y devuelve un mensaje de error genérico
-            String errorMessage = "Error occurred while creating user: " + ex.getMessage();
-            ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), errorMessage);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al crear el usuario: " + ex.getMessage());
         }
     }
 
