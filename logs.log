@@ -38,4 +38,44 @@
   2024-04-23 17:30:11 INFO  UserController:46 - POST USERcom.example.Entities.User@1532c619
   2024-04-23 17:30:11 INFO  UserController:29 - GET ALL
   2024-04-23 17:30:11 INFO  UserController:53 - DELETING USER BY ID1
+  2024-04-24 00:44:37 INFO  UserController:60 - UPDATING USER BY ID 1
+  2024-04-24 00:44:37 INFO  UserController:36 - GET BY ID 1
+  2024-04-24 00:44:37 INFO  UserController:46 - POST USER
+  2024-04-24 00:44:37 INFO  UserController:29 - GET ALL
+  2024-04-24 00:44:37 INFO  UserController:53 - DELETING USER BY ID 1
+  2024-04-24 10:20:10 INFO  UserController:29 - GET ALL
+  2024-04-24 10:20:24 INFO  UserController:29 - GET ALL
+  2024-04-24 10:20:49 INFO  UserController:36 - GET BY ID 12
+  2024-04-24 10:22:18 INFO  UserController:29 - GET ALL
+  2024-04-24 10:22:50 INFO  UserController:46 - POST USER
+  2024-04-24 10:23:00 INFO  UserController:29 - GET ALL
+  2024-04-24 10:23:51 INFO  UserController:60 - UPDATING USER BY ID 15
+  2024-04-24 10:23:54 INFO  UserController:29 - GET ALL
+  2024-04-24 10:24:10 INFO  UserController:53 - DELETING USER BY ID 15
+  2024-04-24 10:24:12 INFO  UserController:29 - GET ALL
+  2024-04-24 10:28:12 INFO  UserController:60 - UPDATING USER BY ID 1
+  2024-04-24 10:28:12 INFO  UserController:36 - GET BY ID 1
+  2024-04-24 10:28:12 INFO  UserController:46 - POST USER
+  2024-04-24 10:28:12 INFO  UserController:29 - GET ALL
+  2024-04-24 10:28:12 INFO  UserController:53 - DELETING USER BY ID 1
+  2024-04-28 16:04:51 INFO  UserController:29 - GET ALL
+  2024-04-28 16:23:48 INFO  UserController:29 - GET ALL
+  2024-04-28 16:32:34 INFO  UserController:29 - GET ALL
+  2024-04-28 16:50:57 INFO  UserController:29 - GET ALL
+  2024-04-28 17:03:10 INFO  UserController:29 - GET ALL
+  2024-04-28 17:13:07 INFO  UserController:29 - GET ALL
+  2024-04-28 17:13:35 INFO  UserController:36 - GET BY ID 1
+  2024-04-28 17:14:11 INFO  UserController:29 - GET ALL
+  2024-04-28 17:15:09 INFO  UserController:46 - POST USER
+  2024-04-28 17:15:15 INFO  UserController:46 - POST USER
+  2024-04-28 17:15:29 INFO  UserController:29 - GET ALL
+  2024-04-28 17:15:32 INFO  UserController:29 - GET ALL
+  2024-04-28 17:33:50 INFO  UserController:33 - GET ALL
+  2024-04-28 17:34:00 ERROR UserController:53 - User not found with ID: 5
+  2024-04-28 17:35:47 INFO  UserController:47 - GET BY ID 1
+  2024-04-28 17:42:16 INFO  UserController:33 - GET ALL
+  2024-04-28 17:43:40 INFO  UserController:33 - GET ALL
+  2024-04-28 17:45:22 ERROR UserController:66 - Error occurred while creating user: not-null property references a null or transient value : com.example.Entities.User.DNI
+  2024-04-28 17:45:25 ERROR UserController:66 - Error occurred while creating user: not-null property references a null or transient value : com.example.Entities.User.DNI
+  2024-04-28 17:45:48 ERROR UserController:66 - Error occurred while creating user: not-null property references a null or transient value : com.example.Entities.User.contacto1_email
   
