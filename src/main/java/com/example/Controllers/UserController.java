@@ -27,7 +27,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/users")
     public ResponseEntity<Object> readAll() {
         try {
             List<User> users = userService.readAllUsers();
@@ -35,7 +35,8 @@ public class UserController {
             return ResponseEntity.ok(users);
         } catch (Exception ex) {
             logger.error("Error para mostrar a todos los usuarios: " + ex.getMessage());
-            ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
+            ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), "HOLA" + ex.getMessage());
+
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
     }
