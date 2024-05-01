@@ -39,7 +39,6 @@ public class UserService {
         User existingUser = userDAO.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al usuario con el id: " + id));
 
-
         existingUser.setContraseña(updatedUser.getContraseña());
         existingUser.setNombre(updatedUser.getNombre());
         existingUser.setApellidos(updatedUser.getApellidos());
@@ -63,8 +62,8 @@ public class UserService {
         return userDAO.save(existingUser);
     }
 
-
     public User readUserById(Integer id) {
         return userDAO.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al usuario con el ID: " + id));
     }
 }
+

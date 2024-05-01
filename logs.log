@@ -175,3 +175,34 @@
 2024-04-30 09:49:18 INFO  UserController:68 - DELETING USER BY ID
 2024-04-30 09:49:59 INFO  UserController:75 - UPDATING USER BY ID
 2024-04-30 09:50:12 INFO  UserController:75 - UPDATING USER BY ID
+2024-05-01 22:19:30 INFO  UserController:72 - UPDATING USER BY ID
+2024-05-01 22:19:30 INFO  UserController:54 - CREATE USER DONE...
+2024-05-01 22:19:30 INFO  UserController:32 - GET ALL
+2024-05-01 22:19:30 INFO  UserController:65 - DELETING USER BY ID
+2024-05-01 22:21:18 INFO  UserController:32 - GET ALL
+2024-05-01 22:24:35 INFO  UserController:33 - GET ALL
+2024-05-01 22:29:14 ERROR UserController:52 - Error occurred while processing request: No se ha encontrado al usuario con el ID: 5
+2024-05-01 22:29:41 ERROR UserController:52 - Error occurred while processing request: No se ha encontrado al usuario con el ID: 5
+2024-05-01 23:15:19 INFO  UserController:42 - GET BY ID
+2024-05-01 23:15:20 INFO  UserController:42 - GET BY ID
+2024-05-01 23:15:21 INFO  UserController:42 - GET BY ID
+2024-05-01 23:24:33 INFO  UserController:42 - GET BY ID
+2024-05-01 23:35:03 INFO  UserController:40 - GET user by id null
+2024-05-01 23:35:19 INFO  UserController:40 - GET user by id null
+2024-05-01 23:45:52 INFO  UserController:32 - GET ALL
+2024-05-01 23:53:22 INFO  UserController:45 - GET BY ID
+2024-05-01 23:55:22 INFO  UserController:46 - User not found for ID: 5
+2024-05-01 23:56:50 INFO  UserController:46 - User not found for ID: 5
+2024-05-01 23:56:57 INFO  UserController:46 - User not found for ID: 5
+2024-05-01 23:57:31 INFO  UserController:46 - User not found for ID: 5
+2024-05-01 23:57:57 INFO  UserController:46 - User not found for ID: 5
+2024-05-02 00:13:55 INFO  UserController:46 - User not found for ID: 5
+2024-05-02 00:21:32 INFO  UserController:48 - User not found for ID: 56
+2024-05-02 00:21:35 INFO  UserController:48 - User not found for ID: 5
+2024-05-02 00:21:39 INFO  UserController:36 - GET ALL
+2024-05-02 00:21:47 INFO  UserController:48 - User not found for ID: 6
+2024-05-02 01:12:12 INFO  UserController:31 - GET ALL
+2024-05-02 01:16:13 INFO  UserController:70 - UPDATING USER BY ID
+2024-05-02 01:16:19 INFO  UserController:70 - UPDATING USER BY ID
+2024-05-02 01:19:01 INFO  UserController:52 - CREATE USER DONE...
+2024-05-02 01:44:10 INFO  UserController:33 - GET ALL
