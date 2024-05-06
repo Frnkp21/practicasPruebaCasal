@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -63,7 +64,7 @@ public class UserService {
     }
 
     public User readUserById(Integer id) {
-        return userDAO.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al usuario con el ID: " + id));
+            return userDAO.findById(id).orElseThrow(() -> new ResourceNotFoundException("no se encuentra por el id"+ id));
     }
 }
 

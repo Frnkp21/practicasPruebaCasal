@@ -1,34 +1,30 @@
 package com.example.Errors;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @RestControllerAdvice
 public class ControllerAdvice {
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Object> handleException(Exception ex) {
+        ErrorMessage errorMessage = new ErrorMessage(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage);
+    }
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ResourceNotFoundException.class)
-    @ResponseBody
-    public ResponseEntity<ErrorMessage> handleResourceNotFoundException(ResourceNotFoundException ex, HttpServletRequest request) {
-        ErrorMessage errorMessage = new ErrorMessage(ex, request.getRequestURI());
-        return new ResponseEntity<>(errorMessage, HttpStatus.NOT_FOUND);
-    }
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseBody
-    public ResponseEntity<ErrorMessage> handleRuntimeException(RuntimeException ex, HttpServletRequest request) {
-        ErrorMessage errorMessage = new ErrorMessage(ex, request.getRequestURI());
-        return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
+    public ResponseEntity<Object> handleResourceNotFoundException(ResourceNotFoundException ex) {
+        ErrorMessage errorMessage = new ErrorMessage(HttpStatus.NOT_FOUND.value(), ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
     }
 
-    @ExceptionHandler(NoResourceFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ResponseBody
-    public ErrorMessage handleNoResourceFoundException(NoResourceFoundException ex) {
-        return new ErrorMessage(ex, "Resource not found");
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex) {
+        String errorMessage = "El formato de los datos proporcionados no es valido";
+        ErrorMessage errorMessage1 = new ErrorMessage(HttpStatus.BAD_REQUEST.value(), errorMessage);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage1);
     }
 }

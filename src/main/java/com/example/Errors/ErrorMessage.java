@@ -1,36 +1,19 @@
 package com.example.Errors;
 
 public class ErrorMessage {
-    private String exception;
+    private int code;
     private String message;
-    private String path;
 
-    public ErrorMessage(Exception exception, String path) {
-        this.exception = exception.getClass().getSimpleName();
-        this.message = exception.getMessage();
-        this.path = path;
+    public ErrorMessage(int code, String message) {
+        this.code = code;
+        this.message = message;
     }
 
-    public String getException() {
-        return exception;
-    }
-
-    public void setException(String exception) {
-        this.exception = exception;
+    public int getCode() {
+        return code;
     }
 
     public String getMessage() {
         return message;
     }
-
-
-    @Override
-    public String toString() {
-        return "ErrorMessage{" +
-                "exception='" + exception + '\'' +
-                ", message='" + message + '\'' +
-                ", path='" + path + '\'' +
-                '}';
-    }
 }
-

@@ -1,16 +1,13 @@
 package com.example.Controllers;
 
-import com.example.Errors.UserIdNotFoundException;
 import com.example.Services.UserService;
 import com.example.Entities.User;
 import org.apache.log4j.Logger;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.util.List;
 
@@ -38,9 +35,10 @@ public class UserController {
     public ResponseEntity<User> readUserById(@PathVariable Integer id) {
         User user = userService.readUserById(id);
         if (user != null) {
+            logger.info("GET BY ID");
             return ResponseEntity.ok(user);
         } else {
-            logger.info("GET BY ID");
+
             return ResponseEntity.notFound().build();
         }
     }
