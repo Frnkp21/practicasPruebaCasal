@@ -27,7 +27,7 @@ public class UserController {
     @GetMapping("/users")
     public ResponseEntity<Object> readAll() {
             List<User> users = userService.readAllUsers();
-            logger.info("GET ALL");
+            logger.info("Obteniendo toda los usuarios");
             return ResponseEntity.ok(users);
 
     }
@@ -35,7 +35,7 @@ public class UserController {
     public ResponseEntity<User> readUserById(@PathVariable Integer id) {
         User user = userService.readUserById(id);
         if (user != null) {
-            logger.info("GET BY ID");
+            logger.info("Obteniendo usuarios por el id: " + id );
             return ResponseEntity.ok(user);
         } else {
 
@@ -59,14 +59,14 @@ public class UserController {
     @DeleteMapping("/users/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);
-        logger.info("DELETING USER BY ID");
+        logger.info("Borrando usuarios por el id" + id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/users/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser) {
         User user = userService.updateUser(id, updatedUser);
-        logger.info("UPDATING USER BY ID");
+        logger.info("Actualizando usuarios por el id "+id);
         return ResponseEntity.ok(user);
     }
 }

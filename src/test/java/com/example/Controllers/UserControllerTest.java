@@ -1,6 +1,7 @@
 package com.example.Controllers;
 
 import com.example.Entities.User;
+import com.example.Errors.ResourceNotFoundException;
 import com.example.Services.UserService;
 import jakarta.transaction.Transactional;
 import org.hibernate.exception.ConstraintViolationException;
@@ -59,8 +60,8 @@ class UserControllerTest {
     @Test
     public void testReadUserById_NotFound() {
         int nonExistentUserId = 123;
-        when(userService.readUserById(nonExistentUserId)).thenThrow(NoResourceFoundException.class);
-        assertThrows(NoResourceFoundException.class, () -> {
+        when(userService.readUserById(nonExistentUserId)).thenThrow(ResourceNotFoundException.class);
+        assertThrows(ResourceNotFoundException.class, () -> {
             userController.readUserById(nonExistentUserId);
         });
     }
