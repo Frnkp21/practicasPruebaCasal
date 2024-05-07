@@ -37,6 +37,7 @@ public class UserService {
         } catch (Exception ex) {
             String errorMessage = "Error al intentar eliminar el usuario con ID: " + id;
             logger.error(errorMessage, ex);
+            logger.warn("Utiliza un id existente para poder borrar el usuario",ex);
             throw new RuntimeException(errorMessage, ex);
         }
     }
@@ -72,6 +73,7 @@ public class UserService {
         } catch (Exception ex) {
             String errorMessage = "Error al intentar actualizar el usuario con ID: " + id;
             logger.error(errorMessage, ex);
+            logger.warn("Fallo en modificar el usuario, verifica que todos los campos esten correctos", ex);
             throw new RuntimeException(errorMessage, ex);
         }
     }
@@ -83,6 +85,7 @@ public class UserService {
         } catch (Exception ex) {
             String errorMessage = "EL usuario: " + id + " no existe";
             logger.error(errorMessage, ex);
+            logger.warn("Fallo en el id proporcionado, se tiene que poner uno existente", ex);
             throw new RuntimeException(errorMessage, ex);
         }
     }
