@@ -29,6 +29,7 @@ public class ActividadesTipoController {
     public ResponseEntity<Object> readAll() {
         List<ActividadesTipo> actividadesTipos = actividadesTipoService.readAllActividadTipo();
         logger.info("Obteniendo todas las actividades");
+        logger.debug("Todas las activities cargadas correctamente");
         return ResponseEntity.ok(actividadesTipos);
     }
 
@@ -37,6 +38,7 @@ public class ActividadesTipoController {
         ActividadesTipo actividadesTipo = actividadesTipoService.readActividadTipoById(id);
         if (actividadesTipo != null) {
             logger.info("Obteniendo actividades por el id: " + id );
+            logger.debug("Recuperando activities by id " + id);
             return ResponseEntity.ok(actividadesTipo);
         } else {
 
@@ -48,6 +50,7 @@ public class ActividadesTipoController {
         try {
             ActividadesTipo createdUser = actividadesTipoService.createActividadesTipo(actividadesTipo);
             logger.info("CREATE ACTIVIDAD DONE...");
+            logger.debug("Nueva activity creada");
             return ResponseEntity.ok(createdUser);
         } catch (ConstraintViolationException ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -58,6 +61,7 @@ public class ActividadesTipoController {
     public ResponseEntity<Void> deleteActividadTipo(@PathVariable Integer id) {
         actividadesTipoService.deleteActividadesTipo(id);
         logger.info("Borrando usuarios por el id" + id);
+        logger.debug("Activity "+ id + " borrada correctamente");
         return ResponseEntity.noContent().build();
     }
 }

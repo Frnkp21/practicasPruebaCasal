@@ -32,6 +32,7 @@ public class ActividadesTipoService {
         } catch (Exception ex) {
             String errorMessage = "EL usuario: " + id + " no existe";
             logger.error(errorMessage, ex);
+            logger.warn("Fallo en el id proporcionado, se tiene que poner uno existente", ex);
             throw new RuntimeException(errorMessage, ex);
         }
     }
@@ -47,6 +48,7 @@ public class ActividadesTipoService {
         } catch (Exception ex) {
             String errorMessage = "Error al intentar eliminar la actividad con ID: " + id;
             logger.error(errorMessage, ex);
+            logger.warn("Utiliza un id existente para poder borrar la actividad",ex);
             throw new RuntimeException(errorMessage, ex);
         }
     }
