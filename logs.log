@@ -557,3 +557,153 @@ com.example.Errors.ResourceNotFoundException: No se puede borrar, porque no exis
 2024-05-07 11:34:51 DEBUG UserController:32 - Todo los users cargados correctamente
 2024-05-07 11:35:42 INFO  UserController:31 - Obteniendo todos los usuarios
 2024-05-07 11:35:42 DEBUG UserController:32 - Todo los users cargados correctamente
+2024-05-07 16:14:55 INFO  UserController:39 - Obteniendo usuarios por el id: 1
+2024-05-07 16:14:55 DEBUG UserController:40 - Recuperando users by id 1
+2024-05-07 16:15:02 ERROR UserService:87 - EL usuario: 5 no existe
+com.example.Errors.ResourceNotFoundException: No se ha encontrado al usuario con el ID: 5
+	at com.example.Services.UserService.lambda$readUserById$1(UserService.java:83)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.example.Services.UserService.readUserById(UserService.java:83)
+	at com.example.Controllers.UserController.readUserById(UserController.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2024-05-07 16:15:02 WARN  UserService:88 - Fallo en el id proporcionado, se tiene que poner uno existente
+com.example.Errors.ResourceNotFoundException: No se ha encontrado al usuario con el ID: 5
+	at com.example.Services.UserService.lambda$readUserById$1(UserService.java:83)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.example.Services.UserService.readUserById(UserService.java:83)
+	at com.example.Controllers.UserController.readUserById(UserController.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2024-05-07 16:15:28 INFO  UserController:30 - Obteniendo todos los usuarios
+2024-05-07 16:15:28 DEBUG UserController:31 - Todo los users cargados correctamente
+2024-05-07 16:17:48 INFO  UserController:39 - Obteniendo usuarios por el id: 1
+2024-05-07 16:17:48 DEBUG UserController:40 - Recuperando users by id 1
+2024-05-07 16:19:06 INFO  UserController:39 - Obteniendo usuarios por el id: 1
+2024-05-07 16:19:06 DEBUG UserController:40 - Recuperando users by id 1
+2024-05-07 16:19:55 DEBUG UserController:73 - Actualizando users by id 1
+2024-05-07 16:19:55 INFO  UserController:74 - Actualizando usuarios por el id 1
+2024-05-07 16:20:02 INFO  UserController:39 - Obteniendo usuarios por el id: 1
+2024-05-07 16:20:02 DEBUG UserController:40 - Recuperando users by id 1
+2024-05-07 16:36:47 DEBUG UserController:73 - Actualizando users by id 1
+2024-05-07 16:36:47 INFO  UserController:74 - Actualizando usuarios por el id 1
+2024-05-07 16:36:47 INFO  UserController:39 - Obteniendo usuarios por el id: 1
+2024-05-07 16:36:47 DEBUG UserController:40 - Recuperando users by id 1
+2024-05-07 16:36:47 INFO  UserController:52 - CREATE USER DONE...
+2024-05-07 16:36:47 DEBUG UserController:53 - Nuevo user creado
+2024-05-07 16:36:47 INFO  UserController:30 - Obteniendo todos los usuarios
+2024-05-07 16:36:47 DEBUG UserController:31 - Todo los users cargados correctamente
+2024-05-07 16:36:47 INFO  UserController:65 - Borrando usuarios por el id1
+2024-05-07 16:36:47 DEBUG UserController:66 - Usuario 1 borrado correctamente
+2024-05-07 16:53:04 DEBUG UserController:73 - Actualizando users by id 1
+2024-05-07 16:53:04 INFO  UserController:74 - Actualizando usuarios por el id 1
+2024-05-07 16:53:04 INFO  UserController:39 - Obteniendo usuarios por el id: 1
+2024-05-07 16:53:04 DEBUG UserController:40 - Recuperando users by id 1
+2024-05-07 16:53:04 INFO  UserController:52 - CREATE USER DONE...
+2024-05-07 16:53:04 DEBUG UserController:53 - Nuevo user creado
+2024-05-07 16:53:04 INFO  UserController:30 - Obteniendo todos los usuarios
+2024-05-07 16:53:04 DEBUG UserController:31 - Todo los users cargados correctamente
+2024-05-07 16:53:04 INFO  UserController:65 - Borrando usuarios por el id1
+2024-05-07 16:53:04 DEBUG UserController:66 - Usuario 1 borrado correctamente
+2024-05-07 17:07:12 INFO  ActividadesTipoController:52 - CREATE tipo de actividad DONE...
+2024-05-07 17:07:12 DEBUG ActividadesTipoController:53 - Nuevo tipo de actividad creada
+2024-05-07 17:07:12 INFO  ActividadesTipoController:40 - Obteniendo Tipo de actividad por el id: 1
+2024-05-07 17:07:12 DEBUG ActividadesTipoController:41 - Recuperando tipo de actividad by id 1
+2024-05-07 17:07:12 INFO  ActividadesTipoController:63 - Borrando el tipo de actividad por el id1
+2024-05-07 17:07:12 DEBUG ActividadesTipoController:64 - tipo de actividad con el id: 1 borrada correctamente
+2024-05-07 17:07:12 INFO  ActividadesTipoController:31 - Obteniendo todos los tipos de actividades
+2024-05-07 17:07:12 DEBUG ActividadesTipoController:32 - Todos los tipos de actividad cargadas correctamente
+2024-05-07 17:07:12 DEBUG ActividadesTipoController:70 - Actualizando el tipo de actividad by id 1
+2024-05-07 17:07:12 INFO  ActividadesTipoController:71 - Actualizando el tipo de actividad por el id 1

@@ -28,8 +28,8 @@ public class ActividadesTipoController {
     @GetMapping("/actividadestipo")
     public ResponseEntity<Object> readAll() {
         List<ActividadesTipo> actividadesTipos = actividadesTipoService.readAllActividadTipo();
-        logger.info("Obteniendo todas las actividades");
-        logger.debug("Todas las activities cargadas correctamente");
+        logger.info("Obteniendo todos los tipos de actividades");
+        logger.debug("Todos los tipos de actividad cargadas correctamente");
         return ResponseEntity.ok(actividadesTipos);
     }
 
@@ -37,8 +37,8 @@ public class ActividadesTipoController {
     public ResponseEntity<ActividadesTipo> readActividadTipoById(@PathVariable Integer id) {
         ActividadesTipo actividadesTipo = actividadesTipoService.readActividadTipoById(id);
         if (actividadesTipo != null) {
-            logger.info("Obteniendo actividades por el id: " + id );
-            logger.debug("Recuperando activities by id " + id);
+            logger.info("Obteniendo Tipo de actividad por el id: " + id );
+            logger.debug("Recuperando tipo de actividad by id " + id);
             return ResponseEntity.ok(actividadesTipo);
         } else {
 
@@ -49,19 +49,27 @@ public class ActividadesTipoController {
     public ResponseEntity<Object> createActividadTipo(@RequestBody ActividadesTipo actividadesTipo) {
         try {
             ActividadesTipo createdUser = actividadesTipoService.createActividadesTipo(actividadesTipo);
-            logger.info("CREATE ACTIVIDAD DONE...");
-            logger.debug("Nueva activity creada");
+            logger.info("CREATE tipo de actividad DONE...");
+            logger.debug("Nuevo tipo de actividad creada");
             return ResponseEntity.ok(createdUser);
         } catch (ConstraintViolationException ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al crear la actividad: " + ex.getMessage());
+                    .body("Error al crear el tipo de actividad: " + ex.getMessage());
         }
     }
     @DeleteMapping("/actividadestipo/{id}")
     public ResponseEntity<Void> deleteActividadTipo(@PathVariable Integer id) {
         actividadesTipoService.deleteActividadesTipo(id);
-        logger.info("Borrando usuarios por el id" + id);
-        logger.debug("Activity "+ id + " borrada correctamente");
+        logger.info("Borrando el tipo de actividad por el id" + id);
+        logger.debug("tipo de actividad con el id: "+ id + " borrada correctamente");
         return ResponseEntity.noContent().build();
+    }
+    @PutMapping("/actividadestipo/{id}")
+    public ResponseEntity<ActividadesTipo> updateActividadesTipo(@PathVariable Integer id, @RequestBody ActividadesTipo updatedActividadesTipo) {
+        ActividadesTipo actividadesTipo = actividadesTipoService.updateActividadesTipo(id, updatedActividadesTipo);
+        logger.debug("Actualizando el tipo de actividad by id " + id);
+        logger.info("Actualizando el tipo de actividad por el id "+id);
+
+        return ResponseEntity.ok(actividadesTipo);
     }
 }

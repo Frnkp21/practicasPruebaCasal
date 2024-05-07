@@ -2,7 +2,6 @@ package com.example.Controllers;
 
 import com.example.Services.UserService;
 import com.example.Entities.User;
-import io.swagger.models.Path;
 import org.apache.log4j.Logger;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/users")
+    @GetMapping("/usuarios")
     public ResponseEntity<Object> readAll() {
             List<User> users = userService.readAllUsers();
             logger.info("Obteniendo todos los usuarios");
@@ -33,7 +32,7 @@ public class UserController {
             return ResponseEntity.ok(users);
 
     }
-    @GetMapping("/users/{id}")
+    @GetMapping("/usuarios/{id}")
     public ResponseEntity<User> readUserById(@PathVariable Integer id) {
         User user = userService.readUserById(id);
         if (user != null) {
@@ -46,7 +45,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/users")
+    @PostMapping("/usuarios")
     public ResponseEntity<Object> createUser(@RequestBody User user) {
         try {
             User createdUser = userService.createUser(user);
@@ -60,7 +59,7 @@ public class UserController {
     }
 
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/usuarios/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);
         logger.info("Borrando usuarios por el id" + id);
@@ -68,7 +67,7 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/users/{id}")
+    @PutMapping("/usuarios/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser) {
         User user = userService.updateUser(id, updatedUser);
         logger.debug("Actualizando users by id " + id);

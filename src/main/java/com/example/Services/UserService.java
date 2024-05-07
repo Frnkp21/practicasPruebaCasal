@@ -43,8 +43,6 @@ public class UserService {
     }
 
     public User updateUser(Integer id, User updatedUser) {
-
-
         try {
             User existingUser = userDAO.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al usuario con el id: " + id));

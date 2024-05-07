@@ -27,10 +27,10 @@ public class ActividadesTipoService {
     }
     public ActividadesTipo readActividadTipoById(Integer id) {
         try {
-            return actividadesTipoDAO.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al usuario con el ID: " + id));
+            return actividadesTipoDAO.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado al tipo de actividad con el ID: " + id));
 
         } catch (Exception ex) {
-            String errorMessage = "EL usuario: " + id + " no existe";
+            String errorMessage = "EL tipo de actividad: " + id + " no existe";
             logger.error(errorMessage, ex);
             logger.warn("Fallo en el id proporcionado, se tiene que poner uno existente", ex);
             throw new RuntimeException(errorMessage, ex);
@@ -46,9 +46,24 @@ public class ActividadesTipoService {
             }
             actividadesTipoDAO.deleteById(id);
         } catch (Exception ex) {
-            String errorMessage = "Error al intentar eliminar la actividad con ID: " + id;
+            String errorMessage = "Error al intentar eliminar el tipo actividad con ID: " + id;
             logger.error(errorMessage, ex);
-            logger.warn("Utiliza un id existente para poder borrar la actividad",ex);
+            logger.warn("Utiliza un id existente para poder borrar el tipo de actividad",ex);
+            throw new RuntimeException(errorMessage, ex);
+        }
+    }
+    public ActividadesTipo updateActividadesTipo(Integer id, ActividadesTipo updatedActividadesTipo) {
+        try {
+            ActividadesTipo existingActividadesTipo = actividadesTipoDAO.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("No se ha encontrado el tipo de actividad con el id: " + id));
+
+            existingActividadesTipo.setNombre(updatedActividadesTipo.getNombre());
+
+            return actividadesTipoDAO.save(existingActividadesTipo);
+        } catch (Exception ex) {
+            String errorMessage = "Error al intentar actualizar el tipo de actividad con ID: " + id;
+            logger.error(errorMessage, ex);
+            logger.warn("Fallo en modificar el tipo de actividad, verifica que todos los campos esten correctos", ex);
             throw new RuntimeException(errorMessage, ex);
         }
     }
